@@ -44,10 +44,6 @@ const Countries = () => {
     severity: 'success'
   });
 
-  useEffect(() => {
-    fetchCountries();
-  }, []);
-
   const fetchCountries = async () => {
     try {
       const response = await axios.get('/api/countries');
@@ -56,6 +52,11 @@ const Countries = () => {
       showSnackbar('Error fetching countries', 'error');
     }
   };
+
+  useEffect(() => {
+    fetchCountries();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   const showSnackbar = (message, severity = 'success') => {
     setSnackbar({ open: true, message, severity });
@@ -286,4 +287,4 @@ const Countries = () => {
   );
 };
 
-export default Countries; 
+export default Countries;

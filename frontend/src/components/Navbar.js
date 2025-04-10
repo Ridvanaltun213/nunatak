@@ -21,11 +21,11 @@ const Navbar = () => {
           <MenuIcon />
         </IconButton>
         <Typography variant="h6" noWrap component="div">
-          Country Pricing Manager
+          Nuanetek Country Pricing Manager
         </Typography>
         <Box sx={{ flexGrow: 1 }} />
         <Typography variant="subtitle2" sx={{ mr: 2 }}>
-          Ideasoft Integration
+         LemoonCreative Ideasoft Integration
         </Typography>
       </Toolbar>
     </AppBar>

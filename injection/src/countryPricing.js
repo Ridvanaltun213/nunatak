@@ -98,18 +98,20 @@
    * This function should be customized to match Ideasoft's HTML structure
    */
   function getProductInfo() {
-    // Get product information from the current element or page
-    // For a product page, get the single product ID
-    const productElement = document.querySelector('[data-product-id]');
-    if (productElement) {
-      const productId = productElement.getAttribute('data-product-id');
-      const productCategory = productElement.getAttribute('data-category-id');
+    const productDetailButton = document.querySelector('.add-to-cart-button[data-product-id]');
+    if (productDetailButton) {
+      const productId = productDetailButton.getAttribute('data-product-id');
+  
+      const categoryElement = document.querySelector('.product-categories a');
+      const productCategory = categoryElement ? categoryElement.textContent.trim() : 'all';
+  
       return { productId, productCategory };
     }
-    
-    // For category or listing pages, we'll return null values to apply general rules
+  
+    // Liste sayfası için genel kurallar
     return { productId: null, productCategory: 'all' };
   }
+  
   
   /**
    * Update prices on the page
@@ -121,7 +123,10 @@
     const { productId, productCategory } = getProductInfo();
     
     // Update product price elements (customize selectors based on Ideasoft's structure)
-    const priceElements = document.querySelectorAll('.product-price, .price-value, [data-product-price]');
+    const priceElements = document.querySelectorAll(
+      '.product-price-new, .product-price-old, .showcase-price-new, .showcase-price-old'
+    );
+    
     
     priceElements.forEach(el => {
       // Store original price if not already stored

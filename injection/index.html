@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ideasoft Country Pricing Demo</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .product-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        .product {
+            border: 1px solid #ddd;
+            padding: 15px;
+            border-radius: 5px;
+            width: 220px;
+        }
+        .product-image {
+            width: 100%;
+            height: 150px;
+            background-color: #f5f5f5;
+            margin-bottom: 10px;
+        }
+        .product-title {
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .product-price {
+            font-size: 18px;
+            color: #e63946;
+            margin-bottom: 10px;
+        }
+        .price-container {
+            position: relative;
+        }
+    </style>
+</head>
+<body>
+    <h1>Ideasoft Country Pricing Demo</h1>
+    
+    <div class="product-container">
+        <div class="product" data-product-id="1" data-category-id="electronics">
+            <div class="product-image"></div>
+            <div class="product-title">Smartphone X12</div>
+            <div class="price-container">
+                <div class="product-price">$999.99</div>
+            </div>
+        </div>
+        
+        <div class="product" data-product-id="2" data-category-id="clothes">
+            <div class="product-image"></div>
+            <div class="product-title">Premium T-Shirt</div>
+            <div class="price-container">
+                <div class="product-price">$29.99</div>
+            </div>
+        </div>
+        
+        <div class="product" data-product-id="3" data-category-id="home">
+            <div class="product-image"></div>
+            <div class="product-title">Coffee Machine Pro</div>
+            <div class="price-container">
+                <div class="product-price">$149.50</div>
+            </div>
+        </div>
+        
+        <div class="product" data-product-id="4" data-category-id="electronics">
+            <div class="product-image"></div>
+            <div class="product-title">Wireless Headphones</div>
+            <div class="price-container">
+                <div class="product-price">$89.99</div>
+            </div>
+        </div>
+    </div>
+
+    <script src="src/countryPricing.js"></script>
+</body>
+</html> 

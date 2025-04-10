@@ -10,7 +10,38 @@ The script:
 3. Modifies the prices displayed on the website in real-time
 4. Adds a visual indicator showing which country's pricing is being displayed
 
-## Installation
+## Project Structure
+
+```
+/injection
+  /src
+    countryPricing.js    - Main injection script for Ideasoft integration
+  /server
+    server.js            - Demo API server for country pricing rules
+    package.json         - Server dependencies
+  index.html             - Demo page for testing
+  package.json           - Project dependencies
+  .gitignore             - Git ignore file
+  README.md              - This file
+```
+
+## Local Development Setup
+
+1. Install dependencies:
+   ```
+   npm install
+   cd server
+   npm install
+   ```
+
+2. Start the API server:
+   ```
+   npm run dev
+   ```
+
+3. Open `index.html` in your browser to test the country pricing functionality.
+
+## Installation in Ideasoft
 
 ### Method 1: JavaScript Injection
 
@@ -27,16 +58,16 @@ If your Ideasoft installation supports custom JavaScript in the admin panel:
 1. Go to the Ideasoft admin panel
 2. Navigate to Design/Customization settings
 3. Find the section for Custom JavaScript
-4. Copy the entire contents of the `countryPricing.js` file and paste it there
+4. Copy the entire contents of the `src/countryPricing.js` file and paste it there
 5. Save your changes
 
 ## Configuration
 
-Edit the `countryPricing.js` file to adjust these settings:
+Edit the `src/countryPricing.js` file to adjust these settings:
 
 ```javascript
 // Configuration
-const API_BASE_URL = 'http://localhost:5000/api'; // Change to your production API URL
+const API_BASE_URL = 'http://138.199.158.118:5000/api'; // Change to your production API URL
 ```
 
 ## Customization

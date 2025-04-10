@@ -7,7 +7,7 @@
 
 (function() {
   // Configuration
-  const API_BASE_URL = 'http://localhost:5000/api'; // Replace with your actual API URL in production
+  const API_BASE_URL = 'http://138.199.158.118:5000/api'; // Replace with your actual API URL in production
   
   // Cache for price rules and country data
   let priceRulesCache = null;
@@ -98,14 +98,17 @@
    * This function should be customized to match Ideasoft's HTML structure
    */
   function getProductInfo() {
-    // This is a placeholder - you'll need to adapt this to Ideasoft's actual DOM structure
-    const productId = document.querySelector('meta[property="product:id"]')?.content || 
-                      document.querySelector('[data-product-id]')?.getAttribute('data-product-id');
-                      
-    const productCategory = document.querySelector('meta[property="product:category"]')?.content || 
-                           document.querySelector('[data-category-id]')?.getAttribute('data-category-id');
+    // Get product information from the current element or page
+    // For a product page, get the single product ID
+    const productElement = document.querySelector('[data-product-id]');
+    if (productElement) {
+      const productId = productElement.getAttribute('data-product-id');
+      const productCategory = productElement.getAttribute('data-category-id');
+      return { productId, productCategory };
+    }
     
-    return { productId, productCategory };
+    // For category or listing pages, we'll return null values to apply general rules
+    return { productId: null, productCategory: 'all' };
   }
   
   /**
